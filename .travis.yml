@@ -1,0 +1,23 @@
+language: cpp
+
+# Run jobs on container-based infrastructure, can be overridden per job
+sudo: false
+
+addons:
+  apt:
+    sources:
+      - george-edison55-precise-backports
+    packages:
+      - cmake-data
+      - cmake
+
+script:
+  - mkdir build
+  - cd build
+  - cmake ..
+  - make
+  - cd cpp_ci
+  - ./unit_tests
+
+notifications:
+  email: false
