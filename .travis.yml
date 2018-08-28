@@ -18,7 +18,7 @@ script:
   - make
   - cd cpp_ci
   - ./unit_tests
-  - ..
+  - cd ..
   - mkdir coverage
   - cd coverage
   - gcov ../../cpp_ci/*.cpp --object-directory ../cpp_ci/CMakeFiles/unit_tests.dir/
