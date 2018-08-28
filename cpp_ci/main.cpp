@@ -1,4 +1,5 @@
 #include <iostream>
+#include "catch.hpp"
 using namespace std;
 
 unsigned int Factorial( unsigned int number ) {
