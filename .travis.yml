@@ -14,10 +14,14 @@ addons:
 script:
   - mkdir build
   - cd build
-  - cmake ..
+  - cmake -Dcoverage=ON ..
   - make
   - cd cpp_ci
   - ./unit_tests
+  - ..
+  - mkdir coverage
+  - cd coverage
+  - gcov ../../cpp_ci/*.cpp --object-directory ../cpp_ci/CMakeFiles/unit_tests.dir/
 
 notifications:
   email: false
